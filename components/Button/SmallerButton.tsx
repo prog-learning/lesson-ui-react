@@ -2,25 +2,26 @@ import { VFC } from 'react';
 import styled from 'styled-components';
 import { BaseButton, BaseButtonProps } from './BaseButton';
 
-type CaveInButtonProps = BaseButtonProps & {
+type SmallerButtonProps = BaseButtonProps & {
   bgColor?: string;
 };
 
-export const StyledCaveInButton = styled(BaseButton)<{ bgColor: string }>`
+export const StyledSmallerButton = styled(BaseButton)<{ bgColor: string }>`
   background-color: ${({ bgColor }) => bgColor};
   border: 1px solid #444;
   border-radius: 8px;
   padding: 8px 12px;
   &:hover {
-    filter: brightness(98%);
-    box-shadow: inset 0 0 2px #444;
+    filter: brightness(90%);
+    transform: scale(0.98);
   }
   &:active {
-    box-shadow: inset 0 0 6px #000;
+    filter: brightness(90%);
+    transform: scale(0.9);
   }
 `;
 
-export const CaveInButton: VFC<CaveInButtonProps> = ({
+export const SmallerButton: VFC<SmallerButtonProps> = ({
   className,
   children,
   disabled,
@@ -32,5 +33,5 @@ export const CaveInButton: VFC<CaveInButtonProps> = ({
     disabled,
     bgColor,
   };
-  return <StyledCaveInButton {...props} />;
+  return <StyledSmallerButton {...props} />;
 };

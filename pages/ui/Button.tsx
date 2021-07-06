@@ -1,10 +1,16 @@
 import { VFC } from 'react';
-import { CaveInButton } from '../../components/Button';
+import {
+  CaveInButton,
+  SmallerButton,
+  SinkButton,
+} from '../../components/Button';
 
 const Button: VFC = () => {
   return (
     <div>
-      <CaveInButton>ぶっとn</CaveInButton>
+      <CaveInButton>くぼむ</CaveInButton>
+      <SmallerButton bgColor='skyblue'>小さくなる</SmallerButton>
+      <SinkButton bgColor='limegreen'>へこむ</SinkButton>
     </div>
   );
 };

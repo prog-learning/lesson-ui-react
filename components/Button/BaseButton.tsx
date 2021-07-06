@@ -1,4 +1,5 @@
 import { ReactNode, VFC } from 'react';
+import styled from 'styled-components';
 
 export type BaseButtonProps = {
   className?: string;
@@ -12,8 +13,17 @@ export const BaseButton: VFC<BaseButtonProps> = ({
   disabled,
 }) => {
   return (
-    <button className={className} disabled={disabled}>
+    <StyledButton className={className} disabled={disabled}>
       {children}
-    </button>
+    </StyledButton>
   );
 };
+
+const StyledButton = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+`;
